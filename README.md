@@ -1,6 +1,8 @@
 # btn252osm
 Extrae, reproyecta, fusiona y convierte a formato OSM fenómenos BTN25.
 
+Es necesario tener instalado [ogr2osm](https://github.com/pnorman/ogr2osm)
+
 Las hojas deberán estar como las deja [descargaBTN25.sh](https://github.com/kresp0/descargaBTN25), descomprimidas en carpetas según husos, por ejemplo:
 
 ./BTN25/Guipuzkoa/HUSO30/44011/
