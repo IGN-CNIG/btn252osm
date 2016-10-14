@@ -16,5 +16,3 @@ Por ejemplo, si el directorio con las hojas es /home/usuario/BTN25/Guipuzkoa y l
 ./btn252osm.sh Guipuzkoa LAGUNA
 
 Santiago Crespo y Matías Taborda 2016 WTFL http://www.wtfpl.net/txt/copying/
-
-Es necesario tener la carpeta translations en el mismo sitio que btn252osm.sh
