@@ -1,6 +1,8 @@
 # btn252osm
 Extrae, reproyecta, fusiona y convierte a formato OSM fenómenos BTN25.
 
+Este script sirve para facilitar la preparación de importaciones manuales de datos del BTN25 del IGN a OSM. Ojo, **¡no subir los datos que genera directamente a OSM!**
+
 Es necesario tener instalado [ogr2osm](https://github.com/pnorman/ogr2osm)
 
 Las hojas deberán estar como las deja [descargaBTN25.sh](https://github.com/kresp0/descargaBTN25), descomprimidas en carpetas según husos, por ejemplo:
