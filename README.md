@@ -1,5 +1,5 @@
 # btn252osm
-Extrae, reproyecta y fusiona fenómenos BTN25.
+Extrae, reproyecta, fusiona y convierte a formato OSM fenómenos BTN25.
 
 Las hojas deberán estar como las deja descargaBTN25.sh, descomprimidas en carpetas según husos, por ejemplo:
 
