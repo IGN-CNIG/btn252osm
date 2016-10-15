@@ -7,7 +7,7 @@ Es necesario tener instalado [ogr2osm](https://github.com/pnorman/ogr2osm) y ogr
 
 Las hojas deberán estar como las deja [descargaBTN25.sh](https://github.com/kresp0/descargaBTN25), descomprimidas en carpetas según husos, por ejemplo:
 
-./BTN25/Guipuzkoa/HUSO30/44011/
+/home/usuario/BTN25/Guipuzkoa/HUSO30/44011/
 
 Uso: ./btn252osm.sh Nombre-de-la-zona FENÓMENO-IGN
 
