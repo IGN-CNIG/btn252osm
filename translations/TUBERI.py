@@ -11,7 +11,7 @@ def filterTags(attrs):
 #Situación.01 Subterraneo. 02 Superficial. 03 Elevado.
 	tags.update({'tunnel':'x'})
 	tags.update({'bridge':'x'})
-	tags.update({layer':'0'})
+	tags.update({'layer':'0'})
 
 	if attrs['SITUA_0307'] == '01':
 		tags.update({'tunnel':'yes'})
