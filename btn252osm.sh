@@ -79,7 +79,7 @@ cp /tmp/fusionar/* "$RUTA_INICIAL/$NOMBRE_PROYECTO/"
 
 echo "## Transformando $NOMBRE_PROYECTO.shp $NOMBRE_PROYECTO.osm..."
 cd "$RUTA_INICIAL"
-ogr2osm.py /tmp/fusionar/$NOMBRE_PROYECTO.shp -t $NOMBRE_IGN -o "$RUTA_INICIAL/$NOMBRE_PROYECTO/$NOMBRE_PROYECTO.osm" && echo "## Creado $RUTA_INICIAL/$NOMBRE_PROYECTO/$NOMBRE_PROYECTO.osm :)" && exit 0
+ogr2osm.py /tmp/fusionar/$NOMBRE_PROYECTO.shp -t $NOMBRE_IGN -o "$RUTA_INICIAL/$NOMBRE_PROYECTO/$NOMBRE_PROYECTO.osm" --encoding=ISO-8859-15 && echo "## Creado $RUTA_INICIAL/$NOMBRE_PROYECTO/$NOMBRE_PROYECTO.osm :)" && exit 0
 
 echo "## Error al transformar :("
 exit 1
