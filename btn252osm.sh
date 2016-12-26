@@ -64,6 +64,15 @@ for f in $NOMBRE_PROYECTO-4326*.shp; do ogr2ogr -update -append $NOMBRE_PROYECTO
 echo "## Borrando archivos shp sobrantes..."
 rm $NOMBRE_PROYECTO-*
 
+echo "## Transformando codificación a UTF-8..."
+export SHAPE_ENCODING="ISO-8859-15"
+ogr2ogr $NOMBRE_PROYECTO_UTF8.shp $NOMBRE_PROYECTO.shp -lco ENCODING=UTF-8
+mv $NOMBRE_PROYECTO_UTF8.cpg $NOMBRE_PROYECTO.cpg
+mv $NOMBRE_PROYECTO_UTF8.dbf $NOMBRE_PROYECTO.dbf
+mv $NOMBRE_PROYECTO_UTF8.prj $NOMBRE_PROYECTO.prj
+mv $NOMBRE_PROYECTO_UTF8.shp $NOMBRE_PROYECTO.shp
+mv $NOMBRE_PROYECTO_UTF8.shx $NOMBRE_PROYECTO.shx
+
 echo "## Copiando archivos shp a $RUTA_INICIAL/$NOMBRE_PROYECTO..."
 mkdir "$RUTA_INICIAL/$NOMBRE_PROYECTO"
 cp /tmp/fusionar/* "$RUTA_INICIAL/$NOMBRE_PROYECTO/"
