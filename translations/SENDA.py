@@ -6,6 +6,9 @@ def filterTags(attrs):
 
 	tags={}
 	tags.update({'highway':'track'})
+	tags.update({'surface':'compacted'})
+	tags.update({'tracktype':'grade1'})
+
 # Nombre
 	tags.update({'name':'x'})
 	if attrs['ETIQUETA'] == "":
