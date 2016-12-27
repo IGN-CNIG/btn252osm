@@ -59,14 +59,12 @@ echo "## Reproyectando coordenadas a EPSG:4326..."
 [ -f $NOMBRE_PROYECTO-huso31.shp ] && ogr2ogr -s_srs "+init=epsg:25831 +wktext" -t_srs EPSG:4326 $NOMBRE_PROYECTO-4326_31.shp $NOMBRE_PROYECTO-huso31.shp
 
 echo "## Fusionando shp si hubiera varios husos..."
-for f in $NOMBRE_PROYECTO-4326*.shp; do ogr2ogr -update -append $NOMBRE_PROYECTO-ISO-8859-15.shp $f -f "ESRI Shapefile"; done;
+for f in $NOMBRE_PROYECTO-4326*.shp; do ogr2ogr -update -append $NOMBRE_PROYECTO-fusionado.shp $f -f "ESRI Shapefile"; done;
 
-echo "## Convirtiendo codificación de caracteres de ISO-8859-15 a UTF-8 shp->kml (1/2)..."
-ogr2ogr -f KML $NOMBRE_PROYECTO-UTF8.kml $NOMBRE_PROYECTO-ISO-8859-15.shp
-echo "## Convirtiendo codificación de caracteres de ISO-8859-15 a UTF-8 kml->shp (2/2)..."
-ogr2ogr -f "ESRI Shapefile" $NOMBRE_PROYECTO.shp -lco ENCODING=UTF-8 $NOMBRE_PROYECTO-UTF8.kml
+echo "## Convirtiendo codificación de caracteres de ISO-8859-15 a UTF-8..."
+ogr2ogr -f "ESRI Shapefile" $NOMBRE_PROYECTO.shp -lco ENCODING=UTF-8 $NOMBRE_PROYECTO-fusionado.shp
 
-echo "## Borrando archivos shp sobrantes..."
+echo "## Borrando archivos sobrantes..."
 rm $NOMBRE_PROYECTO-*
 
 echo "## Copiando archivos shp a $RUTA_INICIAL/$NOMBRE_PROYECTO/SHP..."
@@ -75,8 +73,8 @@ cp /tmp/fusionar/* "$RUTA_INICIAL/$NOMBRE_PROYECTO/SHP"
 
 echo "## Transformando $NOMBRE_PROYECTO.shp $NOMBRE_PROYECTO.osm..."
 cd "$RUTA_INICIAL"
-ogr2osm.py /tmp/fusionar/$NOMBRE_PROYECTO.shp -t $NOMBRE_IGN -o /tmp/fusionar/$NOMBRE_PROYECTO-NCR.osm \
-&&  echo "## Transformando decimal HTML numeric character references a UTF8..." ; \
+ogr2osm.py /tmp/fusionar/$NOMBRE_PROYECTO.shp -t $NOMBRE_IGN -o /tmp/fusionar/$NOMBRE_PROYECTO-NCR.osm && \
+echo "## Transformando decimal HTML numeric character references a UTF8..." ; \
 ascii2uni -a D /tmp/fusionar/$NOMBRE_PROYECTO-NCR.osm > "$RUTA_INICIAL/$NOMBRE_PROYECTO/$NOMBRE_PROYECTO.osm" && \
 echo "Creado $RUTA_INICIAL/$NOMBRE_PROYECTO/$NOMBRE_PROYECTO.osm :)" ; exit 0
 
