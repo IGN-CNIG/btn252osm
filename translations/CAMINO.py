@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+# ogr2osm.py falla con el nombre de un camino de Valencia
+
 def filterTags(attrs):
         if not attrs: return
 
