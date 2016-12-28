@@ -1,7 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# ogr2osm.py falla con el archivo Valencia/HUSO30/57058/BTN25_ETRS_BCN0623L_CAMINO_line.shp pues contiene un carácter de control o bit nulo
+# ogr2osm.py falla con el archivo Valencia/HUSO30/57058/BTN25_ETRS_BCN0623L_CAMINO_line.shp
+# porque el "Camí de'l Hort del Llidoner" contiene un carácter de control ("Camí de lHort del Llidoner")
+# Hay que editar este shp (por ejemplo con qgis), elegir codificación ISO-8859-15 y arreglar este nombre.
 
 def filterTags(attrs):
         if not attrs: return
