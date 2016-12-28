@@ -73,4 +73,4 @@ cp /tmp/fusionar/* "$RUTA_INICIAL/$NOMBRE_PROYECTO/SHP"
 
 echo "## Transformando $NOMBRE_PROYECTO.shp $NOMBRE_PROYECTO.osm..."
 cd "$RUTA_INICIAL"
-ogr2osm.py /tmp/fusionar/$NOMBRE_PROYECTO.shp -t $NOMBRE_IGN -o /tmp/fusionar/$NOMBRE_PROYECTO-NCR.osm &&  echo "## Transformando NCR a UTF8..." && ascii2uni -a D /tmp/fusionar/$NOMBRE_PROYECTO-NCR.osm > "$RUTA_INICIAL/$NOMBRE_PROYECTO/$NOMBRE_PROYECTO.osm" && echo "## Creado $RUTA_INICIAL/$NOMBRE_PROYECTO/$NOMBRE_PROYECTO.osm :)" || { echo "## Error al transformar :("; exit 1; }
+ogr2osm.py /tmp/fusionar/$NOMBRE_PROYECTO.shp -t $NOMBRE_IGN -o /tmp/fusionar/$NOMBRE_PROYECTO-NCR.osm &&  echo "## Convirtiendo NCR a UTF8..." && ascii2uni -a D /tmp/fusionar/$NOMBRE_PROYECTO-NCR.osm > "$RUTA_INICIAL/$NOMBRE_PROYECTO/$NOMBRE_PROYECTO.osm" && echo "## Creado $RUTA_INICIAL/$NOMBRE_PROYECTO/$NOMBRE_PROYECTO.osm :)" || { echo "## Error al transformar :("; exit 1; }
