@@ -19,7 +19,7 @@ def filterTags(attrs):
 # COMPO_0635 01=eje, 02=margen
 	tags.update({'area':'xx'})
 	if attrs['COMPO_0635'] == '01':
-		del tags['name']
+		del tags['area']
 	elif attrs['COMPO_0635'] == '02':
 		tags.update({'area':'yes'})
 	else:
