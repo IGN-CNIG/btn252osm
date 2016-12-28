@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# ogr2osm.py falla con el nombre de un camino de Valencia
+# ogr2osm.py falla con el archivo Valencia/HUSO30/57058/BTN25_ETRS_BCN0623L_CAMINO_line.shp pues contiene un carácter de control o bit nulo
 
 def filterTags(attrs):
         if not attrs: return
