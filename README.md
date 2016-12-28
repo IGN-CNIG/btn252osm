@@ -15,4 +15,7 @@ Por ejemplo, si el directorio con las hojas es /home/usuario/BTN25/Guipuzkoa y l
 
 ./btn252osm.sh Guipuzkoa LAGUNA
 
-Santiago Crespo y Matías Taborda 2016 WTFL http://www.wtfpl.net/txt/copying/
+Santiago Crespo y Matías Taborda 2016 Licencia a elegir:
+WTFL http://www.wtfpl.net/txt/copying/
+ o
+CC0 https://creativecommons.org/publicdomain/zero/1.0/
